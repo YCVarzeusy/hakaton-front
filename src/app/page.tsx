@@ -1,7 +1,30 @@
+'use client'
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import {
+  Button
+} from '@mui/material';
 
 export default function Home() {
+
+  const callAPI = async () => {
+    console.log('Calling API');
+    try {
+      const res = await fetch(`http://localhost:3500/api/`,{
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      credentials: 'include',
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -11,19 +34,10 @@ export default function Home() {
         </p>
         <div>
           <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
             rel="noopener noreferrer"
           >
             By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+            <Button onClick={callAPI}  color={"primary"}>Text</Button>
           </a>
         </div>
       </div>
