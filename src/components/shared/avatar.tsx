@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 
 interface AvatarCustomProps {
     imageUrl: string;
+    width?: string;
 }
 
 const AvatarCustom = ( props:AvatarCustomProps) => {
   return (
     <div
       style={{
-        minWidth: '50px',
-        minHeight: '50px',
+        width: props.width ?? '7vw',
+        height: props.width ?? '7vw',
         borderRadius: '50%',
         overflow: 'hidden',
         position: 'relative',

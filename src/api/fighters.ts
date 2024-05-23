@@ -17,7 +17,6 @@ export const listFighters = async () => {
       const result = await res.json();
       return result;
     } catch (err) {
-        console.log(err);
         throw err
     }
   };
@@ -25,7 +24,6 @@ export const listFighters = async () => {
 
   export const listTechnique = async () => {
     try {
-        console.log( `${process.env.NEXT_PUBLIC_URL_BACK_END}/${moduleUrl}/technique` );
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_URL_BACK_END}/${moduleUrl}/technique`
         ,{
@@ -38,7 +36,6 @@ export const listFighters = async () => {
       const result = await res.json();
       return result;
     } catch (err) {
-        console.log(err);
         throw err
     }
   };
@@ -58,7 +55,6 @@ export const listFighters = async () => {
       const result = await res.json();
       return result;
     } catch (err) {
-        console.log(err);
         throw err
     }
   };
@@ -77,10 +73,8 @@ export const listFighters = async () => {
         body: JSON.stringify(data)
       });
       const result = await res.json();
-      const cs = res.headers.get('set-cookie');
-      return { result, cookie: cs};
+      return result;
     } catch (err) {
-        console.log(err);
         throw err
     }
   };
@@ -103,7 +97,6 @@ export const listFighters = async () => {
       const cs = res.headers.get('set-cookie');
       return { result, cookie: cs};
     } catch (err) {
-        console.log(err);
         throw err
     }
   };

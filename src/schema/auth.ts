@@ -11,3 +11,9 @@ export const schemaAuth = z.object({
   });
   
   
+  
+
+export const schemaLevel = z.object({
+  power: z.number().int("El valor debe ser entero").min(1, "El valor debe ser mínimo 1").max(100, "El valor máximo es 100"),
+});
+
