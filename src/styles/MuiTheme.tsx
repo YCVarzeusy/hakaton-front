@@ -14,6 +14,9 @@ interface CustomPaletteOptions extends PaletteOptions {
     darkgreen?: {
         main: string;
     };
+    gray?: {
+      main: string;
+    };
   }
 
 
@@ -31,21 +34,23 @@ const MuiTheme = ({children}:{children:ReactNode}) =>{
         palette: {
           mode: 'light',
           primary: {
-            main: '#3DB4E6',
-            contrastText: "white"
+            main: '#FFCC4A',
+            contrastText: "black"
           },
           secondary: {
-            main: '#570057',
+            main: '#00C299',
+            contrastText: 'white',
           },
           warning: {
             main: '#570057',
           },
           info: {
-            main: '#1d4758',
+            main: '#5372D9',
           },
           deactivate: {main: '#B6B1B1',},
-          darkblue: {main:'#435161'},
-          darkgreen: {main:'#1D4758'}
+          darkblue: {main:'#191A21'},
+          darkgreen: {main:'#00213D'},
+          gray:{ main:"#252424"}
         } as CustomPaletteOptions,
       });
     
