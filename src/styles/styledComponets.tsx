@@ -3,8 +3,8 @@ import { styled } from '@mui/system';
 
 export const  StyledAvatarGroup = styled(AvatarGroup)({
     '& .MuiAvatar-circular': {
-        width: 20, 
-        height: 20, 
+        width: 30, 
+        height: 30, 
         color: '#191A21', 
         fontSize: '0.75rem',
         fontWeight: 'bold',

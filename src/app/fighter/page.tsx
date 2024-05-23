@@ -126,8 +126,7 @@ export default function FighterHome()  {
                                 
                                 {fightersList.map((fighter:fighterInterface, index:number) => 
                                 {
-                                    const totalStars = fighter.level.reduce((acc, lvl) => acc + (lvl.power / 20), 0);
-                                    console.log(totalStars)
+                                    const totalStars = Math.ceil(fighter!.level.reduce((acc, lvl) => acc + (lvl.power / 20), 0));
                                     const totalAbove70 = fighter.level.filter(lvl => lvl.power > 70).length * 5; 
                                     return (
                                     <Grid 
@@ -156,7 +155,7 @@ export default function FighterHome()  {
                                                                 }
                                                                 spacing={8}
                                                                 total={totalStars}
-                                                                max={3}
+                                                                max={2}
                                                                 >
                                                                 {Array.from({ length: Math.min(totalStars, 5) }).map((_, i) => (
                                                                     <Avatar key={i}>

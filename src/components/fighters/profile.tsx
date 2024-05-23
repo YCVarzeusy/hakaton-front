@@ -36,7 +36,7 @@ export default function ProfileFighter (props: profileFighterProps ) {
     let totalAbove70 = 0;
     
   if (fighter) {
-      totalStars = fighter!.level.reduce((acc, lvl) => acc + (lvl.power / 20), 0);
+      totalStars = Math.ceil(fighter!.level.reduce((acc, lvl) => acc + (lvl.power / 20), 0));
       totalAbove70 = fighter!.level.filter(lvl => lvl.power > 70).length * 5; 
   }
 
@@ -75,7 +75,7 @@ export default function ProfileFighter (props: profileFighterProps ) {
                             }
                             spacing={8}
                             total={totalStars}
-                            max={3}
+                            max={5}
                             >
                            {Array.from({ length: Math.min(totalStars, 5) }).map((_, i) => (
                                 <Avatar key={i}>
